@@ -1,0 +1,68 @@
+[
+  {
+    "round": 1,
+    "inject": "Rumor spreads online: \"NATO troops are hoarding fuel from civilians during the exercise.\"",
+    "responses": {
+      "1": { "label": "FACT-CHECK", "shift": 0, "feedback": "Your team published a detailed fact-check with evidence of proper fuel distribution. Mainstream media picked it up, but the rumor persists in closed online groups." },
+      "2": { "label": "PRE-BUNK", "shift": -1, "feedback": "Pre-bunking requires preparation before rumors emerge. Without prior warning, audiences were already exposed. The damage was done." },
+      "3": { "label": "IGNORE", "shift": -2, "feedback": "Silence was interpreted as guilt. The rumor gained momentum across social platforms, and allied media began asking uncomfortable questions." },
+      "4": { "label": "COUNTER-NARRATIVE", "shift": 1, "feedback": "Your team shared stories of NATO troops helping local communities, with photos and testimonials. The positive narrative gained traction and shifted focus away from the rumor." },
+      "5": { "label": "DISCREDIT SOURCE", "shift": -1, "feedback": "Your comms team aggressively attacked the credibility of the blogger who started the rumor. While this neutralized the immediate claim in some circles, adversary media spun it as \"NATO silencing critics.\"" }
+    }
+  },
+  {
+    "round": 2,
+    "inject": "A deepfake video appears online, showing a NATO commander admitting that the exercise is a cover for \"offensive preparations.\"",
+    "responses": {
+      "1": { "label": "FACT-CHECK", "shift": 0, "feedback": "Technical analysis proved the video was fake. Major outlets reported this, but by then millions had seen the original. Trust was shaken among some populations." },
+      "2": { "label": "PRE-BUNK", "shift": 2, "feedback": "Because your team had already warned about the possibility of manipulated media, many audiences were primed to doubt the deepfake. Independent journalists even mocked the video's flaws. The rumor lost traction quickly." },
+      "3": { "label": "IGNORE", "shift": -3, "feedback": "The video went viral. Without a response, adversary outlets treated it as confirmed. Allied populations began questioning NATO's true intentions." },
+      "4": { "label": "COUNTER-NARRATIVE", "shift": 1, "feedback": "You released immediate statements from multiple NATO officials with verified video evidence of the exercise's defensive nature. This competed with the deepfake but didn't fully neutralize it." },
+      "5": { "label": "DISCREDIT SOURCE", "shift": -1, "feedback": "Attacking the anonymous source made you look defensive. The focus shifted from \"is it real?\" to \"why is NATO so aggressive in their denial?\"" }
+    }
+  },
+  {
+    "round": 3,
+    "inject": "An adversary-aligned outlet publishes a \"leaked memo\" claiming several NATO allies privately disagree with the cost of the exercise and are reconsidering participation.",
+    "responses": {
+      "1": { "label": "FACT-CHECK", "shift": 1, "feedback": "Your team coordinated with allied governments to issue joint statements denying the memo's authenticity. Unity was demonstrated publicly, reinforcing cohesion." },
+      "2": { "label": "PRE-BUNK", "shift": 0, "feedback": "Pre-bunking works best before attacks, not during. Your previous warnings helped some audiences remain skeptical, but the memo still created doubt." },
+      "3": { "label": "IGNORE", "shift": -2, "feedback": "Silence allowed the narrative to fester. Adversary media amplified it daily. Real tensions began emerging as allies questioned each other's commitment." },
+      "4": { "label": "COUNTER-NARRATIVE", "shift": 2, "feedback": "You organized a press conference with representatives from all allied nations, showcasing unanimous support. Photos, quotes, and joint commitments dominated the news cycle, overwhelming the fake memo." },
+      "5": { "label": "DISCREDIT SOURCE", "shift": 0, "feedback": "You exposed the outlet's ties to adversary intelligence. This worked with informed audiences but not with those already suspicious of NATO." }
+    }
+  },
+  {
+    "round": 4,
+    "inject": "Social media campaigns claim that NATO exercises are \"destroying local ecosystems\" with fabricated photos of environmental damage.",
+    "responses": {
+      "1": { "label": "FACT-CHECK", "shift": 1, "feedback": "Environmental experts verified that NATO followed all protocols. Your team released before/after satellite imagery showing no damage. The truth spread through credible channels." },
+      "2": { "label": "PRE-BUNK", "shift": 1, "feedback": "Your earlier transparency about environmental safeguards paid off. Audiences remembered your proactive communication and were skeptical of the fake photos." },
+      "3": { "label": "IGNORE", "shift": -2, "feedback": "Environmental groups began protesting. Without your response, they had no counter-information. Public opinion shifted against the exercise." },
+      "4": { "label": "COUNTER-NARRATIVE", "shift": 2, "feedback": "You invited local environmental NGOs to inspect sites themselves and share findings. Their independent verification carried more weight than NATO statements alone." },
+      "5": { "label": "DISCREDIT SOURCE", "shift": -1, "feedback": "Attacking environmental concerns made NATO appear callous. Even when you proved the photos were fake, the aggressive tone damaged your image." }
+    }
+  },
+  {
+    "round": 5,
+    "inject": "A conspiracy theory emerges claiming NATO is using the exercise to install surveillance equipment in civilian areas.",
+    "responses": {
+      "1": { "label": "FACT-CHECK", "shift": 0, "feedback": "You provided detailed technical explanations of all equipment used. Rational audiences accepted this, but conspiracy theorists dismissed it as \"what they want you to believe.\"" },
+      "2": { "label": "PRE-BUNK", "shift": 2, "feedback": "Your proactive transparency about equipment and operations throughout the exercise left no information vacuum. The conspiracy found little fertile ground." },
+      "3": { "label": "IGNORE", "shift": -3, "feedback": "The theory exploded into mainstream discussion. Local politicians began demanding inspections. The exercise became politically toxic." },
+      "4": { "label": "COUNTER-NARRATIVE", "shift": 1, "feedback": "You organized open-house events where civilians could see equipment firsthand and ask questions. This transparency reduced suspicion among local populations." },
+      "5": { "label": "DISCREDIT SOURCE", "shift": -2, "feedback": "Aggressively attacking conspiracy theorists made them martyrs. \"Big NATO trying to silence the truth\" became the new narrative, strengthening their movement." }
+    }
+  },
+  {
+    "round": 6,
+    "inject": "Breaking: Adversary media claims a NATO vehicle struck a civilian car, with graphic (fabricated) photos circulating rapidly.",
+    "responses": {
+      "1": { "label": "FACT-CHECK", "shift": 1, "feedback": "Your team immediately released dashcam footage, GPS logs, and timestamped evidence proving no incident occurred. Quick response prevented the lie from solidifying." },
+      "2": { "label": "PRE-BUNK", "shift": 0, "feedback": "Pre-bunking can't prevent sudden fabricated incidents. Your credibility helped some audiences wait for verification, but emotional images spread faster than preparation." },
+      "3": { "label": "IGNORE", "shift": -4, "feedback": "The photos went viral. Without immediate response, they were treated as real. Protests erupted. Allied governments faced domestic pressure to withdraw from the exercise." },
+      "4.": { "label": "COUNTER-NARRATIVE", "shift": 2, "feedback": "You immediately released comprehensive evidence of the fabrication, while simultaneously highlighting NATO's actual safety record and community support efforts. The truth overtook the lie." },
+      "5": { "label": "DISCREDIT SOURCE", "shift": -1, "feedback": "Attacking the source while families believed their \"neighbors\" were hurt made you seem heartless. The defensive posture undermined your message." }
+    }
+  }
+]
