@@ -1,0 +1,97 @@
+{
+  "FACT_CHECK": {
+    "SUCCESS": [
+      {
+        "shift": 1,
+        "text": "Your rapid and clear fact-check was picked up by credible media, effectively neutralizing the claim for a majority of the public."
+      }
+    ],
+    "NEUTRAL": [
+      {
+        "shift": 0,
+        "text": "The fact-check circulated among journalists and experts but failed to penetrate the social media bubbles where the lie was spreading."
+      }
+    ],
+    "FAILURE": [
+      {
+        "shift": -1,
+        "text": "Your response was too slow or too technical. The adversary spun your correction as 'official propaganda,' further muddying the waters."
+      }
+    ]
+  },
+  "PRE_BUNK": {
+    "SUCCESS": [
+      {
+        "shift": 3,
+        "text": "Your prior warnings about these specific manipulation tactics paid off. The adversary's attempt was widely recognized as hostile propaganda and dismissed, significantly boosting public resilience."
+      }
+    ],
+    "NEUTRAL": [],
+    "FAILURE": [
+      {
+        "shift": 0,
+        "text": "Despite your warnings, the hostile narrative was compelling enough to take root. Your pre-bunking had minimal effect, and a valuable charge was wasted."
+      }
+    ]
+  },
+  "IGNORE": {
+    "SUCCESS": [
+      {
+        "shift": 1,
+        "text": "A risky gamble that paid off. The claim was too absurd to gain traction on its own and quickly faded into obscurity without your intervention."
+      }
+    ],
+    "NEUTRAL": [
+      {
+        "shift": 0,
+        "text": "The hostile narrative didn't explode, but it continues to simmer in fringe communities, creating a low level of background noise and doubt."
+      }
+    ],
+    "FAILURE": [
+      {
+        "shift": -3,
+        "text": "Your silence was interpreted as guilt. The narrative went viral, treated as confirmed truth by adversaries, and caused significant damage to public trust."
+      }
+    ]
+  },
+  "COUNTER_NARRATIVE": {
+    "SUCCESS": [
+      {
+        "shift": 2,
+        "text": "Your powerful, positive stories completely shifted the media focus. The adversary's narrative was drowned out by a wave of compelling, authentic content."
+      }
+    ],
+    "NEUTRAL": [
+      {
+        "shift": 0,
+        "text": "Your positive messaging was well-received but didn't directly address the hostile claim, which continued to circulate and cause damage in specific circles."
+      }
+    ],
+    "FAILURE": [
+      {
+        "shift": -1,
+        "text": "Your counter-narrative was perceived as a clumsy attempt to 'change the subject' and was called out by critics, making you appear evasive."
+      }
+    ]
+  },
+  "DISCREDIT_SOURCE": {
+    "SUCCESS": [
+      {
+        "shift": 1,
+        "text": "You successfully exposed the source as a known disinformation agent with clear ties to hostile actors. The claim was discredited among informed audiences."
+      }
+    ],
+    "NEUTRAL": [
+      {
+        "shift": 0,
+        "text": "While you proved the source was unreliable, the message had already detached from the messenger and was spreading organically among those who wanted to believe it."
+      }
+    ],
+    "FAILURE": [
+      {
+        "shift": -2,
+        "text": "Your attack on the source backfired spectacularly. It was framed as an attempt to silence dissent, creating a martyr and making you look defensive and aggressive. The situation is now significantly worse."
+      }
+    ]
+  }
+}

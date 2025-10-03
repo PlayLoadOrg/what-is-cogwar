@@ -1,4 +1,4 @@
-/* src/App.css - Added Briefing & Doctrine Screens */
+/* src/App.css - Final version with logo scaling and all UI polish */
 
 /* --- 1. Global Styles & Variables --- */
 :root {
@@ -61,6 +61,11 @@ body {
   background-image: linear-gradient(to bottom right, var(--slate-900), var(--blue-900), var(--slate-800));
 }
 
+.game-wrapper {
+  width: 100%;
+  position: relative;
+}
+
 .card {
   width: 100%;
   background-color: rgba(30, 41, 59, 0.4);
@@ -70,6 +75,19 @@ body {
   border: 1px solid rgba(59, 130, 246, 0.3);
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2), 0 8px 10px -6px rgb(0 0 0 / 0.2);
   text-align: center;
+  position: relative;
+}
+
+/* General Card Header for Logo/Menu */
+.card-header {
+  display: flex;
+  justify-content: flex-end; /* Align logo to the right */
+  align-items: center;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  height: 40px;
 }
 
 /* --- 3. Start Screen (Mobile First) --- */
@@ -97,7 +115,6 @@ body {
   letter-spacing: -0.025em;
   background: linear-gradient(to right, var(--blue-400), var(--cyan-300));
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin: 0;
 }
@@ -115,6 +132,7 @@ body {
 .briefing-card {
   max-width: 56rem;
   text-align: center;
+  padding-top: 4rem;
 }
 .briefing-text {
   font-size: 1.1rem;
@@ -143,8 +161,12 @@ body {
     padding: 1.25rem;
     border-radius: 0.75rem;
     text-align: center;
+    background-color: var(--slate-700);
+    background-image: linear-gradient(to right, var(--slate-700), var(--slate-600));
 }
-
+.choice-button:hover {
+    background-image: linear-gradient(to right, var(--blue-700), var(--blue-600));
+}
 
 /* --- 5. Doctrine Screen --- */
 .doctrine-card {
@@ -153,6 +175,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    padding-top: 4rem;
 }
 .doctrine-content {
     flex-grow: 1;
@@ -184,9 +207,44 @@ body {
   transition: max-width 300ms ease-in-out;
 }
 
+.card-fader {
+  transition: filter 300ms ease;
+}
+.card-fader.blurred {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
 .game-header {
-  text-align: center;
-  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  height: 40px; /* Enforce consistent height */
+}
+
+.settings-hamburger {
+    background: none;
+    border: none;
+    color: var(--gray-400);
+    cursor: pointer;
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+}
+.settings-hamburger:hover {
+    color: var(--white);
+    background-color: var(--slate-700);
+}
+
+.header-logo {
+  height: 100%; /* LOGO SCALING: Now scales to parent height */
+  width: auto;
+  opacity: 0.6;
 }
 
 .header-title-container {
@@ -200,277 +258,77 @@ body {
   border: 1px solid rgba(59, 130, 246, 0.3);
 }
 
-.header-icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  color: var(--blue-400);
-}
-
-.header-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  background: linear-gradient(to right, var(--blue-400), var(--cyan-300));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.header-subtitle {
-  margin-top: 0.25rem;
-  font-size: 0.875rem;
-  color: var(--blue-300);
-  font-weight: 600;
-}
-
-.scenario-card {
-  text-align: left;
-}
-
-.scenario-inject {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-
-.inject-icon-container {
-  background-color: rgba(220, 38, 38, 0.2);
-  padding: 0.75rem;
-  border-radius: 9999px;
-}
-
-.inject-icon {
-  width: 1.75rem;
-  height: 1.75rem;
-  color: var(--red-400);
-}
-
-.inject-title {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--red-400);
-  margin: 0 0 0.25rem 0;
-}
-
-.inject-text {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--gray-200);
-}
-
-.scenario-responses {
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--gray-700);
-}
-
-.responses-title {
-  color: var(--cyan-400);
-  font-weight: 700;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  text-align: center;
-}
-
-.responses-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
-}
-
-.feedback-card {
-  text-align: left;
-}
-.feedback-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--cyan-400);
-  margin-bottom: 0.75rem;
-}
-.feedback-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--gray-200);
-  margin-bottom: 1.5rem;
-}
-
-.game-footer {
-  margin-top: 0.75rem;
-  text-align: center;
-  font-size: 0.875rem;
-  color: var(--gray-500);
-}
+.header-icon { width: 1.25rem; height: 1.25rem; color: var(--blue-400); }
+.header-title { font-size: 1.25rem; font-weight: 700; background: linear-gradient(to right, var(--blue-400), var(--cyan-300)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.header-subtitle { text-align: center; margin-top: 0.25rem; font-size: 0.875rem; color: var(--blue-300); font-weight: 600; }
+.scenario-card { text-align: left; }
+.scenario-inject { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.75rem; margin-bottom: 0.75rem; }
+.inject-icon-container { background-color: rgba(220, 38, 38, 0.2); padding: 0.75rem; border-radius: 9999px; }
+.inject-icon { width: 1.75rem; height: 1.75rem; color: var(--red-400); }
+.inject-title { font-size: 1.125rem; font-weight: 700; color: var(--red-400); margin: 0 0 0.25rem 0; }
+.inject-text { font-size: 1rem; line-height: 1.5; color: var(--gray-200); }
+.scenario-responses { padding-top: 0.75rem; border-top: 1px solid var(--gray-700); }
+.responses-title { color: var(--cyan-400); font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; text-align: center; }
+.responses-grid { display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
+.feedback-card { text-align: left; }
+.feedback-title { font-size: 1.25rem; font-weight: 700; color: var(--cyan-400); margin-bottom: 0.75rem; }
+.feedback-text { font-size: 1rem; line-height: 1.6; color: var(--gray-200); margin-bottom: 1.5rem; }
+.game-footer { margin-top: 0.75rem; text-align: center; font-size: 0.875rem; color: var(--gray-500); }
 
 /* --- 7. End Screen (Mobile First) --- */
-.end-card {
-  max-width: 48rem;
-  transition: max-width 300ms ease-in-out;
-}
-
-.end-icon-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.end-icon {
-  width: 4rem;
-  height: 4rem;
-}
-
-.end-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0 0 1rem 0;
-}
-
-.end-message {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--gray-300);
-}
-
-.end-actions {
-  padding-top: 1.25rem;
-}
+.end-card { max-width: 48rem; transition: max-width 300ms ease-in-out; }
+.end-icon-container { display: flex; justify-content: center; margin-bottom: 1rem; }
+.end-icon { width: 4rem; height: 4rem; }
+.end-title { font-size: 2rem; font-weight: 700; margin: 0 0 1rem 0; }
+.end-message { font-size: 1rem; line-height: 1.6; color: var(--gray-300); }
+.end-actions { padding-top: 1.25rem; }
 
 /* --- 8. Tug of War Bar (Mobile First) --- */
-.tug-of-war-container {
-  width: 100%;
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0.75rem;
-  transition: max-width 300ms ease-in-out;
-}
-
-.tug-of-war-bar {
-  position: relative;
-  height: 2.5rem;
-  background-color: var(--slate-800);
-  border-radius: 9999px;
-  border: 3px solid var(--gray-600);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
-  overflow: hidden;
-}
-
-.bar-color-fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-image: linear-gradient(to right, var(--red-600), var(--slate-600) 50%, var(--cyan-500));
-  transition: clip-path 500ms ease-out;
-}
-
-.bar-marker {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background-color: var(--white);
-  box-shadow: 0 0 8px var(--white);
-  transition: all 500ms ease-out;
-  transform: translateX(-50%);
-  z-index: 2; 
-}
-
-.bar-marker-orb {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: var(--white);
-  border-radius: 9999px;
-  box-shadow: 0 0 12px 2px var(--white);
-  border: 2px solid var(--gray-700);
-}
-
-.bar-labels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.25rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-}
-
+.tug-of-war-container { width: 100%; max-width: 48rem; margin-left: auto; margin-right: auto; margin-bottom: 0.75rem; transition: max-width 300ms ease-in-out; }
+.tug-of-war-bar { position: relative; height: 2.5rem; background-color: var(--slate-800); border-radius: 9999px; border: 3px solid var(--gray-600); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3); overflow: hidden; }
+.bar-color-fill { position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-image: linear-gradient(to right, var(--red-600), var(--slate-600) 50%, var(--cyan-500)); transition: clip-path 500ms ease-out; }
+.bar-marker { position: absolute; top: 0; bottom: 0; width: 3px; background-color: var(--white); box-shadow: 0 0 8px var(--white); transition: all 500ms ease-out; transform: translateX(-50%); z-index: 2; }
+.bar-marker-orb { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0.75rem; height: 0.75rem; background-color: var(--white); border-radius: 9999px; box-shadow: 0 0 12px 2px var(--white); border: 2px solid var(--gray-700); }
+.bar-labels { display: flex; justify-content: space-between; margin-top: 0.25rem; font-size: 0.7rem; font-weight: 700; }
 .label-fragmentation { color: var(--red-300); }
 .label-neutral { color: var(--gray-400); }
 .label-unity { color: var(--cyan-300); }
-
-.meter-value {
-  text-align: center;
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--white);
-}
+.meter-value { text-align: center; margin-top: 0.5rem; font-size: 1rem; font-weight: 700; color: var(--white); }
 
 /* --- 9. Buttons & Utilities --- */
-.button {
-  padding: 0.75rem 1.5rem;
-  font-weight: 700;
-  border-radius: 9999px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2);
-  transform: scale(1);
-  transition: transform 150ms ease, background-image 150ms ease;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  color: var(--white);
-}
-
-.button:hover {
-  transform: scale(1.05);
-}
-
-.primary-button {
-  background-image: linear-gradient(to right, var(--blue-600), var(--cyan-600));
-  border: 2px solid var(--blue-400);
-}
-.primary-button:hover {
-  background-image: linear-gradient(to right, var(--blue-500), var(--cyan-500));
-}
-
-.response-button {
-  padding: 0.75rem 1.25rem;
-  background-image: linear-gradient(to right, var(--slate-700), var(--slate-600));
-  border: 1px solid var(--slate-500);
-  text-align: left;
-  border-radius: 0.75rem;
-}
-.response-button:hover {
-  background-image: linear-gradient(to right, var(--blue-700), var(--blue-600));
-  border-color: var(--blue-400);
-}
-
-.full-width {
-  width: 100%;
-}
-
+.button { padding: 0.75rem 1.5rem; font-weight: 700; border-radius: 9999px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.2), 0 2px 4px -2px rgb(0 0 0 / 0.2); transform: scale(1); transition: transform 150ms ease, background-image 150ms ease; border: none; cursor: pointer; font-size: 1rem; color: var(--white); }
+.button:hover { transform: scale(1.05); }
+.primary-button { background-image: linear-gradient(to right, var(--blue-600), var(--cyan-600)); border: 2px solid var(--blue-400); }
+.primary-button:hover { background-image: linear-gradient(to right, var(--blue-500), var(--cyan-500)); }
+.response-button { padding: 0.75rem 1.25rem; background-color: var(--slate-700); background-image: linear-gradient(to right, var(--slate-700), var(--slate-600)); border: 1px solid var(--slate-500); text-align: left; border-radius: 0.75rem; }
+.response-button:hover { background-image: linear-gradient(to right, var(--blue-700), var(--blue-600)); border-color: var(--blue-400); }
+.response-button:disabled { background-color: var(--slate-800); background-image: none; color: var(--slate-500); cursor: not-allowed; opacity: 0.6; }
+.response-button:disabled:hover { transform: scale(1); }
+.full-width { width: 100%; }
 .text-green { color: var(--green-400); }
 .text-red { color: var(--red-400); }
 .text-yellow { color: var(--yellow-400); }
 
+/* --- 10. Settings Menu --- */
+.settings-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.1); backdrop-filter: blur(8px); z-index: 10; }
+.settings-menu { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(30, 41, 59, 0.8); border: 1px solid var(--slate-600); border-radius: 1rem; padding: 1.5rem; z-index: 11; display: flex; flex-direction: column; gap: 1rem; min-width: 280px; }
+.settings-title { color: var(--white); text-align: center; margin: 0 0 0.5rem 0; font-size: 1.5rem; }
+.settings-button { width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.75rem; background-color: var(--slate-700); background-image: linear-gradient(to right, var(--slate-700), var(--slate-600)); border-radius: 0.5rem; }
 
-/* --- 10. Desktop & Tablet Overrides --- */
+
+/* --- 11. Desktop & Tablet Overrides --- */
 @media (min-width: 768px) {
   .app-container { padding: 2rem; }
   .card { padding: 3rem; }
+  .card-header { top: 1.5rem; left: 1.5rem; right: 1.5rem; }
   .start-card { gap: 1.5rem; }
   .logo { width: 120px; height: 120px; margin-bottom: 2rem; }
   .title-container { padding: 2rem 0; }
   .main-title { font-size: 3.75rem; }
   .disclaimer-text { padding-top: 1.5rem; }
   .choice-button-container { flex-direction: row; gap: 2rem; }
-  .doctrine-card { padding: 2rem 3rem 1.5rem 3rem;}
-  .game-header { margin-bottom: 2rem; }
-  .header-title-container { gap: 0.75rem; }
-  .header-title { font-size: 1.5rem; }
+  .doctrine-card { padding: 2rem 3rem 1.5rem 3rem; padding-top: 5rem;}
+  .game-header { margin-bottom: 1rem; }
   .header-subtitle { margin-top: 1rem; }
   .scenario-inject { flex-direction: row; align-items: flex-start; text-align: left; gap: 1rem; margin-bottom: 2rem; }
   .inject-icon { width: 2rem; height: 2rem; }
@@ -494,7 +352,7 @@ body {
   .response-button { padding: 1rem 1.5rem; }
 }
 
-/* --- 11. Ultra-Wide Desktop Overrides --- */
+/* --- 12. Ultra-Wide Desktop Overrides --- */
 @media (min-width: 1280px) {
   .game-content { max-width: 72rem; }
   .tug-of-war-container { max-width: 64rem; }

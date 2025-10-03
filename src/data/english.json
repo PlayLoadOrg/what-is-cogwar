@@ -1,0 +1,46 @@
+{
+  "appTitle": "NARRATIVE FRONT",
+  "appSubtitle": "NATO-led peacekeeping exercise in Eastern Europe",
+  "presenter": "Pareto Syndicate Presents",
+  "credits": "With special thanks to NATO Cognitive Warfare Division",
+  "disclaimer": "I commit to use the following material for the protection of the Common Good in alignment with the Declaration of Human Rights, the UN Charter, and in accordance with the treaties and agreements of my country of residence.",
+  "swearButton": "This I Swear",
+  
+  "briefingText": "This resource has been influenced by the NATO Strategic Communications (StratCom) documentation (especially [link: AJP-10](https://coi.nato.int/EWCOI/EW%20COI%20Shared%20Documents/EMO%20DOCTRINE%20PREP/AJP%20HARMONIZATION/AJP-10.1%20EDA%20V1%20E.pdf)) and improved based on input from [link: NATO COGWAR professionals](https://www.act.nato.int/activities/cognitive-warfare/). In the highly interconnected environment of the 21st century, the primary theater of war is no longer kinetic, it is cognitive, and it is ever present. Bad actors use nefarious techniques to destroy trust and spread lies that turn people against one another, but through citizen-government-alliance partnership, we are not defenseless. We have the power to win on the Narrative Front.",
+  "learnButton": "\"Is it possible to learn this power?\"",
+  "trialsButton": "\"I am ready to face the trials.\"",
+
+  "doctrineProceed": "Proceed to the Trials",
+  "doctrineReturn": "Return to the Trials",
+
+  "meterLabel": "Meter:",
+  "fragmentationLabel": "FRAGMENTATION",
+  "neutralLabel": "NEUTRAL",
+  "unityLabel": "UNITY",
+  
+  "roundLabel": "Round",
+  "adversaryInject": "Adversary Inject",
+  "yourResponse": "Your Response:",
+  "outcomeTitle": "Outcome",
+  "nextRoundButton": "Next Round",
+  "viewResultsButton": "View Results",
+
+  "loading": "Loading...",
+  
+  "endVictoryTitle": "RESILIENT VICTORY",
+  "endVictoryMessage": "The population remained resilient. Allies stood united, operations continued unhindered, and adversary attempts to destabilize perception failed. Maintaining trust and cohesion is itself a decisive victory.",
+  "endDefeatTitle": "COGNITIVE DEFEAT",
+  "endDefeatMessage": "Misinformation fractured alliances. Public support collapsed, leaders faced internal doubt, and adversary narratives gained dominance. Military options were constrained before the first shot was fired.",
+  "endNeutralTitle": "FRAGILE STABILITY",
+  "endNeutralMessage": "Adversary attempts created turbulence, but resilience held just enough to prevent collapse. Operations moved forward, though at a cost. The cognitive battle is ongoing; vigilance must be constant.",
+  "playAgainButton": "Play Again",
+
+  "settingsTitle": "Options",
+  "settingsSoundOn": "Disable Sound",
+  "settingsSoundOff": "Enable Sound",
+  "settingsStudy": "Study Doctrine",
+  "settingsNewRun": "New Run",
+  
+  "rewardPreBunk": "(Reward: +1 PRE-BUNK charge)",
+  "rewardCounterNarrative": "(Reward: +1 COUNTER-NARRATIVE charge)"
+}
