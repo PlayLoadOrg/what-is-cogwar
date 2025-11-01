@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PlayloadFooter from './PlayloadFooter';
 
 const Intro = ({ onStart, onHumanVerified }) => {
   const [humanVerified, setHumanVerified] = useState(false);
@@ -123,78 +124,86 @@ const Intro = ({ onStart, onHumanVerified }) => {
   // Show "I am human" verification first
   if (!humanVerified) {
     return (
-      <div style={{
-        width: '100%',
-        minHeight: '100vh',
-        background: 'linear-gradient(135deg, #eff6ff 0%, #e0e7ff 50%, #dbeafe 100%)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '2rem'
-      }}>
+      <>
         <div style={{
-          textAlign: 'center',
-          padding: '3rem',
-          background: 'rgba(255, 255, 255, 0.8)',
-          borderRadius: '1rem',
-          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
+          width: '100vw',
+          height: '100vh',
+          background: 'linear-gradient(135deg, #eff6ff 0%, #e0e7ff 50%, #dbeafe 100%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '2rem',
+          overflow: 'hidden',
+          margin: 0,
+          padding: 0
         }}>
-          <p style={{
-            fontSize: '1.5rem',
-            color: '#4b5563',
-            marginBottom: '2rem'
+          <div style={{
+            textAlign: 'center',
+            padding: '3rem',
+            background: 'rgba(255, 255, 255, 0.8)',
+            borderRadius: '1rem',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.1)'
           }}>
-            Click below to verify you're human
-          </p>
-          
-          <button
-            onClick={handleHumanClick}
-            style={{
-              padding: '1.25rem 3rem',
-              backgroundColor: '#2563eb',
-              color: 'white',
+            <p style={{
               fontSize: '1.5rem',
-              fontWeight: 'bold',
-              borderRadius: '9999px',
-              border: 'none',
-              cursor: 'pointer',
-              boxShadow: '0 10px 20px rgba(37, 99, 235, 0.3)',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'scale(1.05)';
-              e.target.style.backgroundColor = '#1d4ed8';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'scale(1)';
-              e.target.style.backgroundColor = '#2563eb';
-            }}
-          >
-            ✓ I am human
-          </button>
+              color: '#4b5563',
+              marginBottom: '2rem'
+            }}>
+              Click below to verify you're human
+            </p>
+            
+            <button
+              onClick={handleHumanClick}
+              style={{
+                padding: '1.25rem 3rem',
+                backgroundColor: '#2563eb',
+                color: 'white',
+                fontSize: '1.5rem',
+                fontWeight: 'bold',
+                borderRadius: '9999px',
+                border: 'none',
+                cursor: 'pointer',
+                boxShadow: '0 10px 20px rgba(37, 99, 235, 0.3)',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.05)';
+                e.target.style.backgroundColor = '#1d4ed8';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.backgroundColor = '#2563eb';
+              }}
+            >
+              ✓ I am human
+            </button>
+          </div>
         </div>
-      </div>
+        <PlayloadFooter />
+      </>
     );
   }
 
   // Main intro screen with floating emojis
   return (
-    <div style={{
-      position: 'relative',
-      width: '100%',
-      minHeight: '100vh',
-      background: 'linear-gradient(135deg, #eff6ff 0%, #e0e7ff 50%, #dbeafe 100%)',
-      overflow: 'hidden',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '2rem 1rem',
-      gap: '3rem',
-      opacity: showContent ? 1 : 0,
-      transition: 'opacity 0.5s ease-in-out'
-    }}>
+    <>
+      <div style={{
+        position: 'relative',
+        width: '100vw',
+        height: '100vh',
+        background: 'linear-gradient(135deg, #eff6ff 0%, #e0e7ff 50%, #dbeafe 100%)',
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '2rem 1rem 3rem 1rem',
+        gap: '3rem',
+        opacity: showContent ? 1 : 0,
+        transition: 'opacity 0.5s ease-in-out',
+        margin: 0
+      }}>
       {/* Floating emojis */}
       {floatingEmojis.map(emoji => (
         <div
@@ -242,37 +251,10 @@ const Intro = ({ onStart, onHumanVerified }) => {
         textAlign: 'center',
         filter: 'drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1))',
         zIndex: 10,
-        margin: 0,
-        marginBottom: '0.5rem'
+        margin: 0
       }}>
-        What Is Cogwar?
+        What Is COGWAR?
       </h1>
-
-      {/* Presented by Playload.org */}
-      <a
-        href="https://playloadorg.github.io/landing-main-1/"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          color: '#6366f1',
-          fontSize: '1.25rem',
-          fontWeight: '500',
-          textDecoration: 'none',
-          transition: 'color 0.3s ease',
-          zIndex: 10,
-          marginBottom: '1rem'
-        }}
-        onMouseEnter={(e) => {
-          e.target.style.color = '#4f46e5';
-          e.target.style.textDecoration = 'underline';
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.color = '#6366f1';
-          e.target.style.textDecoration = 'none';
-        }}
-      >
-        Presented by Playload.org
-      </a>
       
       {/* Button container */}
       <div style={{
@@ -334,6 +316,8 @@ const Intro = ({ onStart, onHumanVerified }) => {
         </a>
       </div>
     </div>
+    <PlayloadFooter />
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Intro from './components/Intro';
+import PlayloadFooter from './components/PlayloadFooter';
 import introMusicFile from './assets/IntroMusic.mp3';
 
 function App() {
@@ -7,6 +8,23 @@ function App() {
   
   const [gameStarted, setGameStarted] = useState(false);
   const audioRef = useRef(null);
+
+  // Prevent body scrolling
+  useEffect(() => {
+    // Apply to both html and body
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.margin = '0';
+    document.documentElement.style.padding = '0';
+    document.body.style.overflow = 'hidden';
+    document.body.style.margin = '0';
+    document.body.style.padding = '0';
+    document.body.style.height = '100vh';
+    document.body.style.width = '100vw';
+    return () => {
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   // This gets called from Intro when user clicks "I am human"
   const startMusic = () => {
@@ -39,22 +57,26 @@ function App() {
       {!gameStarted ? (
         <Intro onStart={handleStart} onHumanVerified={startMusic} />
       ) : (
-        <div style={{
-          width: '100%',
-          minHeight: '100vh',
-          background: '#f3f4f6',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          <h1 style={{
-            fontSize: '4rem',
-            fontWeight: 'bold',
-            color: '#1f2937'
+        <>
+          <div style={{
+            width: '100vw',
+            minHeight: '100vh',
+            background: '#f3f4f6',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: 0
           }}>
-            Game content goes here...
-          </h1>
-        </div>
+            <h1 style={{
+              fontSize: '4rem',
+              fontWeight: 'bold',
+              color: '#1f2937'
+            }}>
+              Game content goes here...
+            </h1>
+          </div>
+          <PlayloadFooter />
+        </>
       )}
     </div>
   );
