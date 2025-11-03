@@ -198,11 +198,12 @@ const Intro = ({ onStart, onHumanVerified }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '2rem 1rem 3rem 1rem',
+        padding: '2rem 1.5rem 3rem 1.5rem',
         gap: '3rem',
         opacity: showContent ? 1 : 0,
         transition: 'opacity 0.5s ease-in-out',
-        margin: 0
+        margin: 0,
+        boxSizing: 'border-box'
       }}>
       {/* Floating emojis */}
       {floatingEmojis.map(emoji => (
@@ -242,16 +243,20 @@ const Intro = ({ onStart, onHumanVerified }) => {
         }
       `}</style>
 
-      {/* Title */}
+      {/* Title - static at perfect final size and color */}
       <h1 style={{
-        fontSize: 'clamp(3rem, 10vw, 8rem)',
+        fontSize: 'clamp(3rem, 10vw, 3rem)',
         fontWeight: 'bold',
         color: '#312e81',
         letterSpacing: '-0.025em',
         textAlign: 'center',
         filter: 'drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1))',
         zIndex: 10,
-        margin: 0
+        margin: 0,
+        padding: 0,
+        width: '100%',
+        wordWrap: 'break-word',
+        boxSizing: 'border-box'
       }}>
         What Is COGWAR?
       </h1>
@@ -262,7 +267,9 @@ const Intro = ({ onStart, onHumanVerified }) => {
         flexDirection: 'column',
         alignItems: 'center',
         gap: '1rem',
-        zIndex: 10
+        zIndex: 10,
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
         <button
           onClick={handleStartClick}
@@ -292,25 +299,12 @@ const Intro = ({ onStart, onHumanVerified }) => {
           START
         </button>
         
+        {/* NATO Link - now using className */}
         <a
           href="https://www.act.nato.int/activities/cognitive-warfare/"
           target="_blank"
           rel="noopener noreferrer"
-          style={{
-            color: '#4338ca',
-            fontSize: '1.125rem',
-            fontWeight: '500',
-            textDecoration: 'none',
-            transition: 'color 0.3s ease'
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.color = '#312e81';
-            e.target.style.textDecoration = 'underline';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.color = '#4338ca';
-            e.target.style.textDecoration = 'none';
-          }}
+          className="nato-link"
         >
           Releasing in NATO Perception Summer 2026
         </a>

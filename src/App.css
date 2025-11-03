@@ -19,6 +19,46 @@ body {
   min-height: 100vh;
 }
 
+/* Intro Title */
+.intro-title {
+  font-size: clamp(3rem, 10vw, 8rem) !important;
+  font-weight: bold !important;
+  color: #312e81 !important;
+  letter-spacing: -0.025em !important;
+  text-align: center !important;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1)) !important;
+  z-index: 10 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  word-wrap: break-word !important;
+  box-sizing: border-box !important;
+}
+
+/* NATO Link */
+.nato-link,
+.nato-link:link,
+.nato-link:visited,
+.nato-link:active {
+  color: #312e81 !important;
+  font-size: 1.125rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease !important;
+  z-index: 10 !important;
+  text-align: center !important;
+  padding: 0 !important;
+  width: 100% !important;
+  display: inline-block !important;
+  box-sizing: border-box !important;
+}
+
+.nato-link:hover,
+.nato-link:visited:hover {
+  color: #4338ca !important;
+  text-decoration: underline !important;
+}
+
 /* Intro Container */
 .intro-container {
   position: relative;
@@ -177,20 +217,6 @@ body {
 
 .start-button:active {
   transform: scale(0.98);
-}
-
-.nato-link {
-  color: #4338ca;
-  font-size: 1.125rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  z-index: 10;
-}
-
-.nato-link:hover {
-  color: #312e81;
-  text-decoration: underline;
 }
 
 /* Game Placeholder */
